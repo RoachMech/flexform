@@ -1,0 +1,16 @@
+/// Define the padding of a label
+/// Default: 1rem 0;
+/// @param {number|list} $padding - Padding to set to the label
+/// @throws Error when not a number
+@mixin set-flexform-label-padding($padding) {
+  @if (type-of($padding) != number) and (type-of($padding) != list) {
+    @error '$padding passed to set-flexform-label-padding must be of type `number` or `list`, `#{type-of($padding)}` (#{$padding}) given.';
+  }
+  @include set-flexform-option('label-padding', $padding);
+}
+
+/// Get the label padding
+/// @return {number|list} Padding
+@function get-flexform-label-padding() {
+  @return get-flexform-option('label-padding');
+}

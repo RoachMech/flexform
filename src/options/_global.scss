@@ -1,0 +1,25 @@
+/// Set an option
+/// @param {string} $name - Name of the option to set
+/// @param {*} $value - Value of the option to set
+@mixin set-flexform-option($name, $value) {
+  $flexform-options: map-merge($flexform-options, ($name: $value)) !global;
+}
+
+/// Check if the option is set
+/// @param {string} $name - Name of the option
+/// @return {boolean}
+@function has-flexform-option($name) {
+  @return map-has-key($flexform-options, $name);
+}
+
+/// Get the given option
+/// @param {string} $name - Name of the requested option
+/// @throws Error in case the option does not exist
+/// @return {*} The value of the requested option
+@function get-flexform-option($name) {
+  @if not has-flexform-option($name) {
+    @error 'Unknown option `#{$name}` in $flexform-options.';
+  }
+
+  @return map-get($flexform-options, $name);
+}

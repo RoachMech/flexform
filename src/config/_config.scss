@@ -1,0 +1,6 @@
+@include set-flexform-group-margin(0 0 1rem 0);
+@include set-flexform-css-prefix(flexform);
+@include set-flexform-inline-label-width(14rem);
+@include set-flexform-label-padding(1rem 0);
+@include set-flexform-field-sizes((medium: 22rem, small: 8rem));
+@include set-flexform-max-field-size(100%);

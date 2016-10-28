@@ -1,0 +1,54 @@
+/// Get all field sizes
+/// @return {map} Sizes
+@function get-flexform-field-sizes() {
+  @return get-flexform-option('field-sizes');
+}
+
+/// Get a field size by name
+/// @param {string} $name
+/// @return {number} Size
+@function get-flexform-field-size($name) {
+  $sizes: get-flexform-field-sizes();
+
+  @if not map-has-key($sizes, $name) {
+    @error 'Field size `#{$name}` not found.';
+  }
+  @return map-get(get-flexform-field-sizes(), $name);
+}
+
+/// Set sizes for fields
+/// @param {map} $sizes - Sizes for fields
+/// @param {bool} $append - Should the given sizes be appended to the preconfigured sizes
+/// @throws Error when not a map
+@mixin set-flexform-field-sizes($sizes, $append: true) {
+  @if (type-of($sizes) != map) {
+    @error '$sizes passed to set-flexform-field-sizes must be of type `map`, `#{type-of($sizes)}` (#{$sizes}) given.';
+  }
+
+  @if (type-of($append) != bool) {
+    @error '$append passed to set-flexform-field-sizes must be of type `bool`, `#{type-of($append)}` (#{$append}) given.';
+  }
+
+  @if $append and has-flexform-option('field-sizes') {
+    $sizes: map-merge(get-flexform-field-sizes(), $sizes);
+  }
+
+  @include set-flexform-option('field-sizes', $sizes);
+}
+
+/// Set the max field size
+/// Default: 100%;
+/// @param {number} $max-field-size - Max field size
+/// @throws Error when not a number
+@mixin set-flexform-max-field-size($max-field-size) {
+  @if (type-of($max-field-size) != number) {
+    @error '$max-field-size passed to set-flexform-max-field-size must be of type `number`, `#{type-of($max-field-size)}` (#{$max-field-size}) given.';
+  }
+  @include set-flexform-option('max-field-size', $max-field-size);
+}
+
+/// Get the max field size
+/// @return {number} Max field size
+@function get-flexform-max-field-size() {
+  @return get-flexform-option('max-field-size');
+}

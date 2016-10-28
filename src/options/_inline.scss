@@ -1,0 +1,39 @@
+/// Check to see whether label and field should be displayed inline anytime
+/// @return {bool}
+@function flexform-can-be-inline() {
+  @return has-flexform-option('inline-breakpoint');
+}
+
+/// Define a breakpoint from which the label and field are displayed inline
+/// If not set label and field will not be inline
+/// @param {number} $viewport-width - Dimension of the viewport
+/// @throws Error when the given dimension is not a number
+@mixin set-flexform-inline-breakpoint($viewport-width) {
+  @if (type-of($viewport-width) != number) {
+    @error '$viewport-width passed to set-flexform-inline-breakpoint must be of type `number`, `#{type-of($viewport-width)}` (#{$viewport-width}) given.';
+  }
+  @include set-flexform-option('inline-breakpoint', $viewport-width);
+}
+
+/// Get the breakpoint from which the label and field will be displayed inline
+/// @return {number}
+@function get-flexform-inline-breakpoint() {
+  @return get-flexform-option('inline-breakpoint');
+}
+
+
+/// Set the label width if it is displayed inline with the field
+/// @param {number} $width - Width of the label
+/// @throws Error when the given width is not a number
+@mixin set-flexform-inline-label-width($width) {
+  @if (type-of($width) != number) {
+    @error '$width passed to set-flexform-inline-label-width must be of type `number`, `#{type-of($width)}` (#{$width}) given.';
+  }
+  @include set-flexform-option('inline-label-width', $width);
+}
+
+/// Get the inline label width
+/// @return {number} Inline label width
+@function get-flexform-inline-label-width() {
+  @return get-flexform-option('inline-label-width');
+}

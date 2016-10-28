@@ -1,0 +1,47 @@
+/// Create the flexform-group. This is the container for a single element's label, field, addon and text
+/// @param {number|list} $margin - Margin of the group
+@mixin flexform-group($margin: get-flexform-group-margin()) {
+  display: flex;
+  flex-wrap: wrap;
+  margin: $margin;
+}
+
+/// Create the label for a single element
+@mixin flexform-label($padding: get-flexform-label-padding()) {
+  display: block;
+  flex: 1 1 100%;
+  padding: $padding;
+
+  @if flexform-can-be-inline() {
+    @media (min-width: get-flexform-inline-breakpoint()) {
+      flex: 0 0 get-flexform-inline-label-width();
+    }
+  }
+}
+
+/// Create the field container
+@mixin flexform-field-container($max-field-size: get-flexform-max-field-size()) {
+  flex: 1 1 auto;
+  max-width: $max-field-size;
+}
+
+/// @example scss - Create an optional addon
+///   myForm__addon {
+///     @include flexform-addon;
+///   }
+@mixin flexform-addon() {
+  flex: 0 0 auto;
+  margin-left: rhythm();
+}
+
+/// Create the text container
+@mixin flexform-text() {
+  flex: 0 0 100%;
+  margin: rhythm(.5) 0;
+
+  @if flexform-can-be-inline() {
+    @media (min-width: get-flexform-inline-breakpoint()) {
+      padding-left: get-flexform-inline-label-width();
+    }
+  }
+}

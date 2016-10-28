@@ -1,0 +1,11 @@
+$flexform-options: () !default;
+
+/// Check that no options are set to the $flexform-options map
+/// @throws Error in case some options are already set
+@mixin flexform-options-must-be-empty() {
+  @if $flexform-options != () {
+    @error 'Please do not set values to $flexform-options directly. Use the appropiate mixin for setting options';
+  }
+}
+
+@include flexform-options-must-be-empty;

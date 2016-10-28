@@ -1,0 +1,34 @@
+/// Generate flexform-group selectors
+@mixin flexform-generate-group-css() {
+
+  $prefix: get-flexform-css-prefix();
+
+  .#{$prefix}-group {
+    @include flexform-group;
+  }
+
+  .#{$prefix}-group__label {
+    @include flexform-label;
+  }
+
+  .#{$prefix}-group__field {
+    @include flexform-field-container;
+
+    @each $name, $max-size in get-flexform-field-sizes() {
+      &--#{$name} {
+        max-width: $max-size;
+      }
+    }
+  }
+
+  .#{$prefix}-group__addon {
+    @include flexform-addon;
+  }
+
+  .#{$prefix}-group__text {
+    @include flexform-text;
+  }
+
+}
+
+@include flexform-generate-group-css;

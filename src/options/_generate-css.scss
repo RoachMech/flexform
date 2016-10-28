@@ -1,0 +1,19 @@
+/// Set the prefix for outputted css rules. Default: `flexform`
+/// @param {string} $prefix - Prefix
+@mixin set-flexform-css-prefix($prefix) {
+  @if(type-of($prefix) != string) {
+    @error 'Mixin `set-flexform-css-prefix` expects given value to be of type `string`, `#{type-of($prefix)}` (#{$prefix}) given.';
+  }
+
+  @if($prefix == '') {
+    @warn 'You\'ve defined an empty prefix for the generated css. This results in weird css selectors';
+  }
+
+  @include set-flexform-option('css-prefix', $prefix);
+}
+
+/// Get the css prefix
+/// @return {string}
+@function get-flexform-css-prefix() {
+  @return get-flexform-option('css-prefix');
+}
