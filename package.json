@@ -1,5 +1,5 @@
 {
-  "name": "flexform",
+  "name": "flexform-sass",
   "version": "0.1.0",
   "description": "A sass mixin library for creating solid responsive forms using flexbox",
   "scripts": {
