@@ -1,4 +1,6 @@
 # Flexform
+[![Build Status](https://travis-ci.org/RoachMech/flexform.svg?branch=master)](https://travis-ci.org/RoachMech/flexform)
+
 A sass mixin library for creating solid responsive forms using flexbox
 
 ## Install
