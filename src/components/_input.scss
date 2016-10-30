@@ -1,0 +1,19 @@
+@mixin flexform-input-base() {
+  appearance: none;
+  background-color: get-flexform-input-property(background-color);
+  border: get-flexform-input-property(border);
+  border-radius: get-flexform-input-property(border-radius);
+  color: inherit;
+  display: inline-block;
+  font-family: inherit;
+  font-size: inherit;
+  height: get-flexform-input-property(height);
+  outline: none;
+  padding: get-flexform-input-property(padding);
+  width: 100%;
+
+  &:focus {
+    border: map-get(get-flexform-input-property(focus), border);
+    box-shadow: map-get(get-flexform-input-property(focus), box-shadow);
+  }
+}

@@ -1,6 +1,19 @@
 @include set-flexform-group-margin(0 0 1rem 0);
 @include set-flexform-css-prefix(flexform);
 @include set-flexform-inline-label-width(14rem);
-@include set-flexform-label-padding(1rem 0);
+@include set-flexform-label-padding(.75rem 0);
 @include set-flexform-field-sizes((medium: 22rem, small: 8rem));
 @include set-flexform-max-field-size(100%);
+
+$input-properties: (
+  background-color: white,
+  border: 1px solid black,
+  border-radius: 0,
+  height: 3rem,
+  padding: 0 1rem,
+  focus: (
+    border: 1px solid blue,
+    box-shadow: 0 0 5px rgba(lightblue, .9)
+  )
+);
+@include set-flexform-input-properties($input-properties);
