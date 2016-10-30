@@ -1,1 +1,41 @@
 @import "true";
+
+@import "../src/options/global";
+
+
+@include test-module('Flexform options global') {
+
+  @include test('Setting an option to the Flexform options [mixin]') {
+    $flexform-options: () !global;
+    @include set-flexform-option(foo, bar);
+
+    $test: $flexform-options;
+    $expect: (foo: bar);
+    @include assert-equal($test, $expect);
+  }
+
+  @include test('Check if an option exists (Exists) [function]') {
+    $flexform-options: (foo: bar) !global;
+
+    $test: has-flexform-option(foo);
+    $expect: true;
+    @include assert-equal($test, $expect);
+  }
+
+  @include test('Check if an option exists (Does not exist) [function]') {
+    $flexform-options: (foo: bar) !global;
+
+    $test: has-flexform-option(bar);
+    $expect: false;
+    @include assert-equal($test, $expect);
+  }
+
+  @include test('Getting an option from the Flexform options [function]') {
+    $flexform-options: (foo: bar) !global;
+
+    $test: get-flexform-option(foo);
+    $expect: bar;
+    @include assert-equal($test, $expect);
+  }
+
+}
