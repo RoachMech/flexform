@@ -1,0 +1,26 @@
+
+@mixin set-flexform-input-properties($properties) {
+  @if (type-of($properties) != map) {
+    @error '$properties passed to set-flexform-input-properties must be of type `map`, `#{type-of($properties)}` (#{$properties}) given.';
+  }
+
+  $existing-properties: ();
+  @if has-flexform-option(input-properties) {
+    $existing-properties: get-flexform-option(input-properties);
+  }
+  @include set-flexform-option(input-properties, map-merge($existing-properties, $properties));
+}
+
+@function get-flexform-input-properties() {
+  @return get-flexform-option(input-properties);
+}
+
+@function get-flexform-input-property($name) {
+  $properties: get-flexform-input-properties();
+
+  @if not map-has-key($properties, $name) {
+    @error 'Property `#{$name}` does not exist';
+  }
+
+  @return map-get($properties, $name);
+}
