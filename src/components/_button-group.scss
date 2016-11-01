@@ -1,0 +1,11 @@
+@mixin flexform-button-group($margin: 2rem 0 0 0) {
+  display: flex;
+  flex-wrap: wrap;
+  margin: $margin;
+
+  @if flexform-can-be-inline() {
+    @media (min-width: get-flexform-inline-breakpoint()) {
+      margin-left: get-flexform-inline-label-width();
+    }
+  }
+}

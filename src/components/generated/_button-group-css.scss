@@ -1,0 +1,12 @@
+/// Generate flexform-button-group selectors
+@mixin flexform-generate-button-group-css() {
+
+  $prefix: get-flexform-css-prefix();
+
+  .#{$prefix}-button-group {
+    @include flexform-button-group;
+  }
+
+}
+
+@include flexform-generate-button-group-css;

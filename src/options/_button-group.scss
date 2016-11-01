@@ -1,0 +1,16 @@
+/// Define the margin of the button group
+/// Default: 2rem 0 0 0;
+/// @param {number|list} $margin - Margin to set to the group
+/// @throws Error when not a number or list
+@mixin set-flexform-button-group-margin($margin) {
+  @if (type-of($margin) != number) and (type-of($margin) != list) {
+    @error '$margin passed to set-flexform-button-group-margin must be of type `number` or `list`, `#{type-of($margin)}` (#{$margin}) given.';
+  }
+  @include set-flexform-option(button-group-margin, $margin);
+}
+
+/// Get the button group margin
+/// @return {number|list} Margin
+@function get-flexform-button-group-margin() {
+  @return get-flexform-option(button-group-margin);
+}
