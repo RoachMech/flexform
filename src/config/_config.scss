@@ -5,6 +5,7 @@
 @include set-flexform-field-sizes((medium: 22rem, small: 8rem));
 @include set-flexform-max-field-size(100%);
 @include set-flexform-button-group-margin(2rem 0 0 0);
+@include set-flexform-textarea-padding(.75rem 0);
 
 $input-properties: (
   background-color: white,

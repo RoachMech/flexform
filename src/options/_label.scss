@@ -1,5 +1,5 @@
 /// Define the padding of a label
-/// Default: 1rem 0;
+/// Default: .75rem 0;
 /// @param {number|list} $padding - Padding to set to the label
 /// @throws Error when not a number
 @mixin set-flexform-label-padding($padding) {

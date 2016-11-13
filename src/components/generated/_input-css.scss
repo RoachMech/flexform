@@ -1,4 +1,4 @@
-/// Generate flexform-group selectors
+/// Generate flexform-input selectors
 @mixin flexform-generate-input-css() {
 
   $prefix: get-flexform-css-prefix();

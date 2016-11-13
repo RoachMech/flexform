@@ -1,3 +1,4 @@
+/// Create a text-based input
 @mixin flexform-input-base() {
   appearance: none;
   background-color: get-flexform-input-property(background-color);

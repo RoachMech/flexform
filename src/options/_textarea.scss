@@ -1,0 +1,33 @@
+/// Define the padding of a textarea
+/// Default: .75rem 0;
+/// @param {number|list} $padding - Padding to set to the textarea
+/// @throws Error when not a number or a list
+@mixin set-flexform-textarea-padding($padding) {
+  @if (type-of($padding) != number) and (type-of($padding) != list) {
+    @error '$padding passed to set-flexform-textarea-padding must be of type `number` or `list`, `#{type-of($padding)}` (#{$padding}) given.';
+  }
+  @include set-flexform-option('textarea-padding', $padding);
+}
+
+/// Get the textarea padding
+/// @return {number|list} Padding
+@function get-flexform-textarea-padding() {
+  @return get-flexform-option('textarea-padding');
+}
+
+/// Define the height of a textarea
+/// Default: 8rem;
+/// @param {number} $height - Height to set to the textarea
+/// @throws Error when not a number
+@mixin set-flexform-textarea-height($height) {
+  @if (type-of($height) != number) {
+    @error '$height passed to set-flexform-textarea-height must be of type `number`, `#{type-of($height)}` (#{$height}) given.';
+  }
+  @include set-flexform-option('textarea-height', $height);
+}
+
+/// Get the textarea height
+/// @return {number|list} Height
+@function get-flexform-textarea-height() {
+  @return get-flexform-option('textarea-height');
+}
