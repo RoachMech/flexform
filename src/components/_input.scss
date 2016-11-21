@@ -1,5 +1,5 @@
 /// Create a text-based input
-@mixin flexform-input-base() {
+@mixin flexform-input-base($height: get-flexform-input-property(height), $padding: get-flexform-input-property(padding)) {
   appearance: none;
   background-color: get-flexform-input-property(background-color);
   border: get-flexform-input-property(border);
