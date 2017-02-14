@@ -21,7 +21,7 @@
 
 /// Create the field container
 @mixin flexform-field-container($max-field-size: get-flexform-max-field-size()) {
-  flex: 1 1 auto;
+  flex: 1;
   max-width: $max-field-size;
 }
 
