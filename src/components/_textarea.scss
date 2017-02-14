@@ -1,0 +1,6 @@
+/// Create a textarea
+/// @param {number} $height
+/// @param {number|list} $padding
+@mixin flexform-textarea($height: get-flexform-textarea-height(), $padding: get-flexform-textarea-padding()) {
+  @include flexform-input-base($height, $padding);
+}

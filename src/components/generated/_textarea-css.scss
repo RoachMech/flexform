@@ -1,0 +1,12 @@
+/// Generate flexform-textarea selectors
+@mixin flexform-generate-textarea-css() {
+
+  $prefix: get-flexform-css-prefix();
+
+  .#{$prefix}-textarea {
+    @include flexform-textarea;
+  }
+
+}
+
+@include flexform-generate-textarea-css;
