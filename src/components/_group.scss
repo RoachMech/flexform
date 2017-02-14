@@ -29,15 +29,15 @@
 ///   myForm__addon {
 ///     @include flexform-addon;
 ///   }
-@mixin flexform-addon() {
+@mixin flexform-addon($margin: 0 0 0 1rem) {
   flex: 0 0 auto;
-  margin-left: rhythm();
+  margin: $margin;
 }
 
 /// Create the text container
-@mixin flexform-text() {
+@mixin flexform-text($margin: .5rem 0) {
   flex: 0 0 100%;
-  margin: rhythm(.5) 0;
+  margin: $margin;
 
   @if flexform-can-be-inline() {
     @media (min-width: get-flexform-inline-breakpoint()) {
