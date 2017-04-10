@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RoachMech/flexform.git"
+    "url": "git+https://github.com/swisnl/flexform.git"
   },
   "keywords": [
     "sass",
@@ -18,12 +18,16 @@
     "field",
     "addon"
   ],
-  "author": "RoachMech",
+  "author": {
+    "name": "SWIS",
+    "email": "rogier@swis.nl",
+    "url": "http://www.swis.nl/"
+  },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/RoachMech/flexform/issues"
+    "url": "https://github.com/swisnl/flexform/issues"
   },
-  "homepage": "https://github.com/RoachMech/flexform#readme",
+  "homepage": "https://github.com/swisnl/flexform#readme",
   "devDependencies": {
     "mocha": "^2.5.3",
     "sass-true": "^2.0.3"
